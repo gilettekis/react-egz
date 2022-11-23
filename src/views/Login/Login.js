@@ -14,7 +14,7 @@ export const Login = (props) => {
         <input type={'password'} className="password" placeholder="password"></input>
         <button onClick={handleLogin}>Prisijungti</button>
     </form>
-       {/* <Greeting isLoggedIn={true}/>; */}
+       <Greeting isLoggedIn={true}/>;
         </>
         )
 

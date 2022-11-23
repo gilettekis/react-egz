@@ -18,7 +18,7 @@ export const Register = (props) => {
         <button onClick={handleRegister}>Registruotis</button>
         </form>
          <div>
-         {/* <Greeting isLoggedIn={false}/>; */}
+         <Greeting isLoggedIn={false}/>;
      </div>
      </>
        

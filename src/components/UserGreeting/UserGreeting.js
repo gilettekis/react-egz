@@ -4,4 +4,4 @@ export const UserGreeting = ({name}) => {
     }
     return <h1>Your registration is successful</h1>
 
-};
+}
