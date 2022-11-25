@@ -1,28 +1,51 @@
 
-import{Link} from 'react-router-dom';
+import styled from "styled-components"
 import { Greeting } from "../../components/Greeting/Greeting";
-export const Register = (props) => {
-    const handleRegister = ()=> {
-        prompt('Confirm your password')
+import { BASE_URL } from "../../utils/constants";
+// import { Page } from '../../Page/Page';
+ const Register = ({title= (''), children}) => {
+    
+    const Title = styled.h1`
+    color:green;
+    background:#eee;
+    padding:25 
+    `;
+    const handleRegister = (e)=> {
+        e.preventDefoult();
+        alert ('Your registration was successful')
+     
+        fetch(`${BASE_URL}/auth/register`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify({
+                email:'onute123@gmail.com',
+                password: 'jonukas'    
+            })  
+        })
+        .then (res => res.json())
+        .then(data => {
+            console.log(data);
+        })
     }
     return(
        
        <>
-       <Link to ='/login'>Login</Link>
-      <Link to ='/register'>Register</Link>
-       {/* <h1>{props.title}</h1>
-       {props.children} */}
-        <form >
+     <Title><h3>REGISTRATION FORM</h3> </Title>
+       
+        <form>
         <input type={'email'} className="email" placeholder="email"></input>
         <input type={'password'} className="password" placeholder="password"></input>
         <button onClick={handleRegister}>Registruotis</button>
         </form>
          <div>
          <Greeting isLoggedIn={false}/>;
+         <h1>{title }</h1>
+            {children}
      </div>
      </>
-       
+     
     )
-
 }
 export default Register;

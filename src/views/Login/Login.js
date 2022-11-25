@@ -1,21 +1,34 @@
-import {Link} from 'react-router-dom';
+import styled from "styled-components"
+// import {Link} from 'react-router-dom';
 import { Greeting } from "../../components/Greeting/Greeting"
-export const Login = (props) => {
-    const handleLogin =()=> {
-        prompt('Confirm your password');
+// import { Page } from '../../Page/Page';
+const Login = ({title= (''), children}) => {
+    const Title = styled.h1`
+    color:green;
+    background:#eee;
+    padding:25 
+    `;
+    const handleLogin =(e)=> {
+        e.preventDefoult();
+        alert('Your have logged in successfully');
+        
     }
     return(
         <>
-        <Link to ='/login'>Login</Link>
-        <Link to ='/register'>Register</Link>
-         
+        <Greeting isLoggedIn={true}/>;
+       <Title><h1>{title }</h1>
+            {children}
+        <h3 >LOGIN FORM</h3>
+        </Title>
+       
     <form className='registerForm'>
         <input type={'email'} className="email"  placeholder="email"></input>
         <input type={'password'} className="password" placeholder="password"></input>
-        <button onClick={handleLogin}>Prisijungti</button>
+       <button onClick={handleLogin}>Prisijungti</button> 
     </form>
-       <Greeting isLoggedIn={true}/>;
+       
         </>
         )
 
 }
+export default Login;

@@ -1,1 +1,1 @@
-export const GuestGreeting = () => <h1>You must be registered</h1>;
+export const GuestGreeting = () => <h3 style={{color:'red'}}>You must be registered!</h3>;
