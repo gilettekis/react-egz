@@ -1,13 +1,28 @@
 import { Link } from "react-router-dom"
+import { useAuth } from "../auth"
 import './Navigation.css'
 export const Navigation = () => {
+    const navLinkStyles = ({isActive})=>{
+        return {
+            fontWeight: isActive ? 'bold' : 'normal',
+            textDecoration: isActive ? 'none': 'underline',
+        }
+    }
+const auth = useAuth()
+
     return (
-        <div className='Navi'>
-        <h2><Link to={'/home'}>Home</Link> </h2>
-          <h2><Link to={'/register'}>Register</Link></h2>
-          <h2><Link to={'/login'}>Login</Link></h2>
-          <h2><Link to={'/add'}>Add</Link></h2>
-       </div>
+        <>  <nav className='Navi'>
+            
+                <Link to={'/home'}>Home</Link>  
+                <Link to={'/add'}>Add</Link>
+                <Link to={'/register'}>Register</Link>
+                <Link to={'/login'}>Login</Link> 
+
+       </nav>
+       {/* !auth.user &&  */}
+       
+        </>
+      
       
     )
 }

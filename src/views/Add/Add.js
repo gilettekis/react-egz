@@ -1,9 +1,18 @@
+
+
 export const Add = () => {
-    const addPageStyle = {
-        background: 'green'
-    }
+
     
     return(
-        <div style = {addPageStyle}></div>
+      <div>
+            <header className="App-header">
+     
+        
+         
+          
+      </header>
+             </div>
+        
+        
     )
 }

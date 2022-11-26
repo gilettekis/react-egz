@@ -1,24 +1,24 @@
 
 import styled from "styled-components"
 import { Greeting } from "../../components/Greeting/Greeting";
+import { Navigation } from "../../components/Navigation/Navigation";
 import { BASE_URL } from "../../utils/constants";
 // import { Page } from '../../Page/Page';
+<Navigation/>
  const Register = ({title= (''), children}) => {
     
-    const Title = styled.h1`
+    const Title = styled.h3`
     color:green;
     background:#eee;
     padding:25 
     `;
     const handleRegister = (e)=> {
-        e.preventDefoult();
         alert ('Your registration was successful')
-     
-        fetch(`${BASE_URL}/auth/register`, {
+        e.preventDefoult();
+
+        fetch (`${BASE_URL}/auth/register`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            
             body:JSON.stringify({
                 email:'onute123@gmail.com',
                 password: 'jonukas'    
@@ -28,6 +28,8 @@ import { BASE_URL } from "../../utils/constants";
         .then(data => {
             console.log(data);
         })
+        
+     
     }
     return(
        
@@ -41,7 +43,7 @@ import { BASE_URL } from "../../utils/constants";
         </form>
          <div>
          <Greeting isLoggedIn={false}/>;
-         <h1>{title }</h1>
+         <h3>{title }</h3>
             {children}
      </div>
      </>
