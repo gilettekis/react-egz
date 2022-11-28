@@ -1,21 +1,21 @@
 
 // import {Link} from 'react-router-dom';
 
+import { NavigationUnpublic } from "../../components/Navigation/NavigationUnpublic/NavigationUnpublic";
+
 
 
 export const Home = ()=> {
-    return (
+  return(
+    <div>
+          <header className="App-header">
+   
+   <NavigationUnpublic/>
        
-      <div>
+        
+    </header>
+           </div>
       
-      </div>
       
-   
-
-   
-      
-
-    
-      
-    )
-};
+  )
+}

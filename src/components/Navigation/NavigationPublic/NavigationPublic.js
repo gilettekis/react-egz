@@ -1,25 +1,25 @@
 import { Link } from "react-router-dom"
-import { useAuth } from "../auth"
+
 import './Navigation.css'
-export const Navigation = () => {
+export const NavigationPublic = () => {
     const navLinkStyles = ({isActive})=>{
         return {
             fontWeight: isActive ? 'bold' : 'normal',
             textDecoration: isActive ? 'none': 'underline',
         }
     }
-const auth = useAuth()
+
 
     return (
         <>  <nav className='Navi'>
             
-                <Link to={'/home'}>Home</Link>  
-                <Link to={'/add'}>Add</Link>
-                <Link to={'/register'}>Register</Link>
-                <Link to={'/login'}>Login</Link> 
+               
+                <h2 className="register" ><Link to={'/register'}>Register</Link></h2>
+                <h2 className="login"><Link to={'/login' }>Login</Link> </h2>
 
        </nav>
-       {/* !auth.user &&  */}
+       
+       {/*  */}
        
         </>
       

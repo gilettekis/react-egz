@@ -19,12 +19,14 @@ function App() {
     <div className='App'> 
       <Page/>
     <Routes>
+    
       <Route path='/login' element={
       <React.Suspense fallback={<div>Loading...</div>}>{<div><Login/></div>}</React.Suspense>}> </Route>
       <Route path='/register'element ={
       <React.Suspense fallback={<div>Loading...</div>}>{<div><Register/></div>}</React.Suspense>}> </Route>
       <Route path='/add' element = {<div><Add/></div>}></Route>
       <Route path='/home' element = {<div><Home/></div>}></Route>
+      
     </Routes>
     <AuthProvider/>
       

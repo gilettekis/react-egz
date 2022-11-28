@@ -1,3 +1,4 @@
+import { NavigationUnpublic } from "../../components/Navigation/NavigationUnpublic/NavigationUnpublic"
 
 
 export const Add = () => {
@@ -7,7 +8,7 @@ export const Add = () => {
       <div>
             <header className="App-header">
      
-        
+            <NavigationUnpublic/>
          
           
       </header>
